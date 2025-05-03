@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing File Name</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div class="main w-full text-white min-h-screen bg-zinc-900 p-10">
+        <form action="/edit" class="mb-20" method="post">
+            <input name="previous"  class="block p-5 outline-none rounded-md text-zinc-500 w-1/4 py-2 bg-zinc-800 m-2" type="text" placeholder="Previous Name" value="<%= filename%>">
+            <input name="new" class="block p-5 outline-none rounded-md w-1/4 py-2 bg-zinc-800 m-2" type="text" placeholder="New Name">
+            <input class="mt-2 bg-blue-300 rounded-md m-2 px-2 py-1" type="submit" value="Update Name">
+        </form>
+
+        <a class="text-white bg-red border-1 p-3 rounded-md " href="/">Go Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteBook By Samad</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+        <div class="form p-10 text-white">
+            <form action="/create" method="post">
+                <input name="tittle" class="block p-5 outline-none rounded-md w-full py-2 bg-zinc-800" type="text" placeholder="tittle">
+                <textarea name="details" class="mt-2 block p-5 outline-none rounded-md w-full py-2 bg-zinc-800 resize-none" placeholder="Write your tast here"></textarea>
+                <input class="mt-2 bg-blue-300 rounded-md px-2 py-1" type="submit" value="Create Task">
+            </form>
+        </div>
+        
+        <div class="tasks mx-10 my-5 flex flex-wrap">
+            
+            <% if(files.length > 0){ %>
+                <% files.forEach(function(val){ %>
+                    <div class="task w-72 p-4 rounded-md bg-zinc-800 m-10">
+                        <h1 class="text-white text-3xl tracking-tighter"><%= val%></h1>
+                        <div class="flex justify-between mt-3 item-center">
+                            <a class="text-blue-400 inline-block " href="/files/<%= val%>">Read More</a>
+                            <a class="text-blue-400 inline-block " href="/edit/<%= val%>">Edit</a>
+                        </div>
+                    </div>                    
+                <% }) %>
+            <% } else { %>
+                <h2 class="text-zinc-600">No task here</h2>
+            <% } %>
+            
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 24:00 -->
